@@ -1,0 +1,27 @@
+PROGRAM  :STMTS
+STMTS :STMT S'
+S' : #
+S' : ; STMTS
+STMT :id = EXPR
+EXPR : TERM E'
+E' : + TERM E'
+E' : - TERM E'
+E' : #
+TERM : POWER T'
+T' :  * POWER T'
+T' :  / POWER T'
+T' : #
+POWER : FACTOR P'
+P' : ^ FACTOR P'
+P' : #
+FACTOR : ( EXPR )
+FACTOR : id
+FACTOR : INTEGER
+INTEGER : num
+INTEGER : plus num
+INTEGER : minus num
+
+
+
+
+
